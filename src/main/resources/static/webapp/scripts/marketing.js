@@ -1,3 +1,14 @@
+//Marketing Questions
+// CHARTS
+// What is the top selling category of items?
+// How does the popularity of products change throughout the year? (by most popular product each month) line graph
+// What times have the highest traffic of sales?
+
+// TABLES
+//What is the top selling category of items Per Country? (country table- most popular item)
+//How does the popularity of products change throughout the year Per Country? (country table - view button)
+//Which locations see the highest traffic of sales?(country table - highest performing city)
+//What times have the highest traffic of sales? Per Country? (country table-highest traffic)
 function $(x) {
     return document.getElementById(x)
 }
@@ -61,17 +72,11 @@ let catUrl="http://localhost:8080/ETL-E-Commerce/order/category"
     chartData.addColumn('number', 'Order Volume');
 
     await fetch(catUrl)
-    .then((resp) => {
-      return resp.json()
+    .then((resp) => {return resp.json()})
+    .then(data => {data.forEach(element => {
+        chartData.addRow([element.product_category, element.count])});
     })
-    .then(data => {
-      data.forEach(element => {
-        chartData.addRow([element.product_category, element.count])
-      });
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    .catch(error => {console.log(error)})
                       
     var chart = new google.visualization.ColumnChart(document.getElementById('column-div'));
     

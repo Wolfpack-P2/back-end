@@ -47,4 +47,22 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
     @Transactional
     @Query(value = "SELECT EXTRACT(HOUR FROM DATETIME) AS HOUR, COUNTRY, COUNT(EXTRACT(HOUR FROM DATETIME)) FROM ETL.ORDERS GROUP BY HOUR, COUNTRY ORDER BY HOUR", nativeQuery = true)
     List<QueryResult> findBusiestTimeCountry();
+//
+//    //List<Order> findAll();
+//    List<Order> findPaymentType(String paymentType);
+//    List<Order> findProcessFails(String failureReason);
+//    List<Order> findCountry(String Country); // getCountry?
+//    List<Order> findHighestSales(String price, int count);
+
+
+
+    // most common payment type (map?)
+        // get all orders
+        // expose payment type
+        // aggregate by country
+    // find all process fails
+    // highest sales
+        // get all orders
+        // expose price
+        // add up price per country
 }

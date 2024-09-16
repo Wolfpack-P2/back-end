@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.util.Optional;
+
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +22,22 @@ public class RegisterController {
     }
 
     @PostMapping
-    public String registerUser(@RequestBody User user) {
-        if (userRepo.findByUsername(user.getUsername()) == null) {
-            /*userRepo.registerUser(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword());*/
-            userRepo.save(user);
-            return "success";
-        } else {
-            return "duplicate username";
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
+        if (userRepo.findByUsername(user.getUsername()) != null) {
+            return new ResponseEntity<>("Username already exists", HttpStatus.CONFLICT);
         }
+        userRepo.save(user);
+        return new ResponseEntity<>("User registered", HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable String username) {
+        User user = userRepo.findByUsername(username);
+        if (user == null) {
+            return new ResponseEntity<>("User does not exist", HttpStatus.NOT_FOUND);
+        }
+        userRepo.delete(user);
+        return new ResponseEntity<>("User deleted", HttpStatus.OK);
     }
 
 }

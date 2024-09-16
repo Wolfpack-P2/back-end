@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -28,18 +30,17 @@ public class LoginController {
 
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public User response(@RequestBody User u){
-        System.out.println("inside post");
+    public User login(@RequestBody User u){
         // get user from db by id, check username and password, return user
         User user = logRepo.findByUsername(u.getUsername());
         System.out.println(user);
         if (user != null && u.getPassword().equals(user.getPassword())) {
 
-            System.out.println("login success");
+            System.out.println("Login Successful");
 
             return user;
         }
-        System.out.println("Login failed");
+        System.out.println("Login Failed");
         return null;
     }
 

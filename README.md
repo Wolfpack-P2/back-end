@@ -1,10 +1,9 @@
-# Alchemy-Wolfpack: E-Commerce ETL
+# 404 Slayers: E-Commerce ETL(WIP)
 
-Public Repository for Team Alchemy's Project Boards and Wiki
+Public Repository for 404 Slayers ETL Ecommerce Capstone Project
 
 ## Project Description
-
-The purpose of the project is to create an ETL (Extract, Transform, Load) and web application to view and manipulate an E-commerce mock data set from an AWS server. We used Talend to read a CSV file with 1000 entries of mock E-commerce data with some dirty data, cleaned that data, then load it onto an AWS server where it can be accessed from the web application.
+The purpose of this project is to create an ETL process and web application to view and manipulate a mock data set of E-commerce data that is persisted on an AWS server. The project implements Talend OPen Studios to read a CSV file that contains 1000 entries of mock data, which is then cleaned, transformed and published on user dashboards. Furthermore, data is sub-divided into data marts for specific divisons of the "company" which include, marketing, research and management. 
 
 ## Technologies Used
 
@@ -25,23 +24,19 @@ The purpose of the project is to create an ETL (Extract, Transform, Load) and we
 * Registration Page
 * Dashboard Page
 
-## Getting Started
+## Requirements
 
-* Note: this app will only work with a connection to Amazon Web Services. The application.properties file will need to be edited to work on your device.
+- All required business rules from the [ETL-CapstoneRequirements.pdf](https://github.com/Revature-404-Slayers/etl-ecommerce/blob/main/ETL-CapstoneRequirements.pdf) must be implemented.  
+- All application data must be stored in an RDS.
+  - Database must be in 3NF. 
+- The application should be as RESTful as possible (at minimum it must follow the restful endpoint naming conventions).
+- Project must also have (and does have):
+  - Session Handling (either with Cookies or HttpSession)
+  - Logging.
+  - User input validation.
+  - Styled web pages either with CSS or Bootstrap.
 
-1. Open git bash terminal in desired directory and enter the following: 
-    git clone https://github.com/Wolfpack-P2/etl-ecommerce.git
-
-2. Open the directory in IntelliJ or other desired Java IDE
-
-3. Make sure that the Maven POM.xml file changes are loaded
-
-4. Edit the application.properties file to your specifications
-
-5. Run EtlECommerceApplication using Spring and then go to http://localhost:8080/ETL-E-Commerce/ to test web app
-
-
-## Contributers
+## Initial Ecommerce Contributers
 
 * Abdul Alim
 * James Benjamin
@@ -49,3 +44,17 @@ The purpose of the project is to create an ETL (Extract, Transform, Load) and we
 * Zahtae Mouzone
 * Nathan Pierce
 * Yasin Yardimoglu
+
+## Application Exchange Contributers (Insurance -> Ecommerce)
+
+* Christopher Crawford
+* Colleen Lynch
+* Coutney Hart
+* Daniel Gutierrez
+* Erik Thomas
+* Jacob Ramsey
+* Joshua Cho
+* Leonardo Molina
+* Michael Lee
+* Troy Cogdell
+* Twain Toussaint
