@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="/src/main/resources/static/webapp/styles/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="webapp/styles/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -12,10 +11,9 @@
     />
     <link rel="stylesheet" href="webapp/styles/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" href="webapp/styles/style.css">
-    
     <title>Data Analytics Dashboard</title>
   </head>
-  <body>
+  <body onload = "getAllResearch()">
 
 
 
@@ -105,7 +103,7 @@
               </div>
             </li>
             <li>
-              <a href="dashboard.html" class="nav-link px-3 active">
+              <a href="#" class="nav-link px-3 active">
                 <span class="me-2"><i class="bi bi-person-fill"></i></span>
                 <span>Employee Dashboard</span>
               </a>
@@ -118,7 +116,7 @@
               </div>
             </li>
             <li>
-              <a href="#" class="nav-link px-3">
+              <a href="dataQuality.html" class="nav-link px-3">
                 <span class="me-2"><i class="bi bi-graph-up"></i></span>
                 <span>Charts</span>
               </a>
@@ -158,67 +156,146 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <h4><B><center>E-Commerce Dashboard</center></B></h4>
+            <h4><B>Research Dashboard</B></h4>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-4 mb-4">
             <div class="card bg-secondary text-white h-100">
-              <div class="card-body py-5"><b>Marketing Team</b> <i class="bi bi-table"></i></div>
-              <div class="card-footer d-flex"> <a href="marketingDashboard.html" style="color: white;">
+              <div class="card-body py-5"><b>Top Product:</b> 1000</div>
+              <div class="card-footer d-flex">
                 View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
-              </a>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-4">
             <div class="card bg-secondary text-white h-100">
-              <div class="card-body py-5"><b>Research Team</b> <i class="bi bi-bell-fill"></i></div>
-              <div class="card-footer d-flex"><a href="researchDashboard.html" style="color: white;">
+              <div class="card-body py-5"><b>Current Top Agents</b></div>
+              <div class="card-footer d-flex">
                 View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
-              </a>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-4">
             <div class="card bg-secondary text-white h-100">
-              <div class="card-body py-5"><b>Management Team</b> <i class="bi bi-gear"></i></div>
-              <div class="card-footer d-flex"><a href="managementDashboard.html" style="color: white;">
+              <div class="card-body py-5"><b>Total Revenue:15M</b></div>
+              <div class="card-footer d-flex">
                 View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
                 </span>
-              </a>
               </div>
             </div>
           </div>
-          <center><div class="col-md-4 mb-5">
+          <div class="col-md-5 mb-5">
             <div class="card bg-secondary text-white h-100">
               <div class="card-body py-5">Data Resources</div>
-              <div class="card-footer d-flex"><a href="dataQuality.html" style="color: white;">
+              <div class="card-footer d-flex">
                 View Details
                 <span class="ms-auto">
                   <i class="bi bi-chevron-right"></i>
-                </span></a>
-              </center>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-header">
+                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                Average Products Purchased Per Transaction <!--bar chart-->
+              </div>
+              <div id = "Q1" class="card-body"> <center><b>'Blank'</b></center>
+                <!--<div id = "Q1" class="card-body"> <center><b>500000000</b></center>-->
+<!--                <canvas class="chart" width="400" height="200"></canvas>-->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-header">
+                  <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                  Average Amount Spent Per Transaction <!--bar chart-->
+                </div>
+                <div id = "Q2" class="card-body"> <center><b>'Blank'</b></center>
+                  <!--<div id = "Q2" class="card-body"> <center><b>500000000</b></center>-->
+                  <!--                <canvas class="chart" width="400" height="200"></canvas>-->
+                </div>
+              </div>
+            </div>
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-header">
+                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                 Sales By Day <!--Line Graph CHARTjs HERE!-->
+              </div>
+              <div class="card-body">
+                <canvas id ="barChart" class="chart" width="200" height="200"></canvas>
               </div>
             </div>
           </div>
         </div>
-       
+        <!-- <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-header">
+                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                Highest Sales Traffic Location 
+              </div>
+              <div class="card-body">
+                <canvas class="chart" width="400" height="200"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-header">
+                <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+                 Highest Sales Traffic Time Period 
+              </div>
+              <div class="card-body">
+                <canvas class="chart" width="400" height="200"></canvas>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+
+
+
+        <!-- Data Table  -->
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <div class="card">
+              <div class="card-header">
+                <span><i class="bi bi-table me-2"></i></span> Reports
+              </div>
+              <div class="card-body">
+                <div id="researchDiv" class="table-responsive" style="height:500px;overflow:auto;">
+                  <table id="researchTable" class="table table-striped data-table table-sort" style="width: 100%">
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    </body>
     <script src="webapp/scripts/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
     <script src="webapp/scripts/jquery-3.5.1.js"></script>
-    <script src="webapp/scripts/jquery.dataTables.min.js"></script>
+    <!--<script src="webapp/scripts/jquery.dataTables.min.js"></script>-->
     <script src="webapp/scripts/dataTables.bootstrap5.min.js"></script>
-<!--    <script src="./js/script.js"></script>-->
+    <script type="text/javascript" src="webapp/scripts/research.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="webapp/scripts/sorttable.js"></script>
   </body>
 </html>

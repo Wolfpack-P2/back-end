@@ -7,34 +7,6 @@ button {
   --offcanvas-width: 270px;
   --topNavbarHeight: 56px;
 }
-
-/* Jacob : styles for the select buttons START here */
-
-label{
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-color: whitesmoke;
-  }
-
-select {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-color: slategrey;
-  color: whitesmoke;
-  border-radius: 25rem;
-  border:1px solid #ddd; 
-  }
-
-select:hover {
-  background:#0088CC;
-  color:#fff;
-} 
-
-/* select button styles END here  */
-
-
 .sidebar-nav {
   width: var(--offcanvas-width);
 }

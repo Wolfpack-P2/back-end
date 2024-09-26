@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+html, body{
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    background-color: #131f2e;
+
+}
+
+#main-container {
+  height:100%;
+    background-color: #131f2e;
+}
+
+#side-bar{
+    background-color: #363c4d;
+}
+
+#side-bar-2{
+    background-color: #363c4d;
+}
+
+#login-card{
+    color: white;
+    background-color: #1b232e;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 120px;
+    /* margin-left: 100px; */
+}
+
+#register-card{
+    color: white;
+    background-color: #1b232e;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 120px;
+    display: none;
+}
+
+#register-form{
+    margin-left: 35px;
+}
+
+
+div.collapse{
+    visibility:collapse;
+}
+
+div.visible{
+    visibility: visible;
+}
+
+#login-button{
+    color: gray;
+    background-color: gainsboro;
+}
+
+#reg-button{
+    color: gray;
+    background-color: gainsboro;
+}
+
+#index-footer{
+    background-color: #131f2e;
+}
+
+#graphic-1{
+    opacity: .3;
+}
+#graphic-2{
+    opacity: .3;
+}
+#graphic-3{
+    opacity: .3;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 0px;
+    padding-bottom:0px;
+    padding-top: 100px;
+}
+
+#dashboard-heading{
+    padding-top: 20px;
+    color: gainsboro;
+}
+
+.card-header{
+    color: white;
+}
+
+#chart-heading-1{
+    color: white;
+    margin-left: 50px;
+}
+
+#bar-heading{
+    color: white;
+    margin-left: 50px;
+}
+
+#bar-label{
+    color: white;
+    margin-left: 50px;
+}
+
+#step-div{
+    margin-left: 50px;
+}
+
+#region-card{
+    background-color: #363c4d;
+    margin-left: 50px;
+    width: 1000px;
+    height: 500px;
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.19);
+}
+
+#nav-geochart{
+    padding: 5px;
+    width: 100%;
+}
+
+#nav-barchart{
+    padding: 5px;
+    width: 100%;
+}
+
+#regions-div{
+    background-color: #363c4d;
+    margin-left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#bar-div{
+    margin-left: 50px;
+}
+
+#geo-label{
+    color: white;
+    margin-left: 50px;
+}
+
+#geo-div{
+    margin-left: 50px;
+}
+
+#column-div{
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+}
+
+#my-pie-chart{
+    width: 1000px;
+    height: 200px;
+    margin-left: 30px;
+    padding: 30px;
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.19);
+    background-color: #1b232e;
+}
+
+svg > g > g:last-child { pointer-events: none }
+
